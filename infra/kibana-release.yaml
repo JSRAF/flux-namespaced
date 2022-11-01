@@ -19,6 +19,6 @@ spec:
   targetNamespace: kibana
   values:
     elasticsearch:
-    hosts: 
-        - elasticsearch-1
-    port: "9200"
+      hosts: 
+        - elastic1
+      port: "9200"
