@@ -3,21 +3,22 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: kibana
-  namespace: cluster-config
+  namespace: cluster-config 
 spec:
+  releaseName: kibana
+  targetNamespace: kibana
   chart:
     spec:
       chart: kibana
-      reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: kibana
+        name: bitnami
         namespace: cluster-config
-  install:
-    createNamespace: true
+      version: "10.2.6"
   interval: 1h0m0s
-  releaseName: kibana
-  targetNamespace: kibana
+  install:
+    remediation:
+      retries: 3
   values:
     elasticsearch:
       hosts: 
