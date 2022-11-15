@@ -5,5 +5,4 @@ resources:
   - namespace.yaml
   - service-account.yaml
   - cluster-role-binding.yaml
-  - helm-repository.yaml
   - release.yaml
