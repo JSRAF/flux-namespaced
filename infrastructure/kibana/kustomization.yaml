@@ -4,5 +4,6 @@ namespace: kibana
 resources:
   - namespace.yaml
   - service-account.yaml
-  - cluster-role-binding.yaml
+  - role.yaml
+  - role-binding.yaml
   - release.yaml
