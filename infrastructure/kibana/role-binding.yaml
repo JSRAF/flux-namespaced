@@ -1,13 +1,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
+kind: RoleBinding
 metadata:
-  name: flux-applier-binding-kibana
+  name: kibana-modifier
   namespace: kibana
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
+  kind: Role
+  name: kibana-modifier
 subjects:
 - kind: ServiceAccount
-  name: flux-applier
+  name: flux
   namespace: kibana
